@@ -1,0 +1,11 @@
+function [Arm,Arm_Length] = Calculate_length(trans,orient)
+%UNTITLED4 此处显示有关此函数的摘要
+%   此处显示详细说明
+R_BP=Rotz(orient(3))*Roty(orient(2))*Rotx(orient(1));
+T_BP=trans+origin_height;
+for i=1:6
+    Arm(:,i)=T_BP+R_BP*attach_P(:,i)-attach_B(:,i);
+    Arm_Length(i)=norm
+
+end
+
